@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int N,k;
+  cin>>N;
+  k=pow(N,0.5);
+  if (k*k==N)
+     return 1;
+  else 
+     return 0;
+}

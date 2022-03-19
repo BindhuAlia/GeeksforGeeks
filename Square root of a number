@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+          int x;
+          cin>>x;
+          int c=1,i;
+          for(i=2;i*i<=x;i++)
+          {
+              if (x%i==i) return i;
+              c+=1;
+          }
+          cout<<c;
+        
+}

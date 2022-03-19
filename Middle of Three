@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int A,B,C,mi,ma;
+cin>>A>>B>>C;
+ma=max(max(A,B),C);
+mi=min(min(A,B),C);
+cout<<ma^mi^A^B^C;
+
+}

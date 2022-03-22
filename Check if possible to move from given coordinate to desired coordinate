@@ -1,0 +1,9 @@
+import math
+class Solution:
+    def isPossible(self, x, y, a, b):
+        # code here 
+        a1=math.gcd(x,y)
+        if math.gcd(a,b)==a1:
+            return 1
+        else:
+            return 0

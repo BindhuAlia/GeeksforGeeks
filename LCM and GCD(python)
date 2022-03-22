@@ -1,0 +1,9 @@
+import math
+class Solution:
+    def lcmAndGcd(self, A , B):
+        L=[];
+        g=math.gcd(A,B)
+        l=(A*B)//g
+        L.append(l)
+        L.append(g)
+        return L

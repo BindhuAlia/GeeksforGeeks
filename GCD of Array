@@ -1,7 +1,6 @@
 import math
 class Solution:
     def gcd(self, n, arr):
-        # code here 
         i=2
         if n==1:
             return arr[0]
@@ -11,3 +10,11 @@ class Solution:
                 a=math.gcd(a,arr[i])
                 i+=1
             return a
+
+if __name__ == '__main__': 
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        arr = list(map(int, input().strip().split()))
+        ob = Solution()
+        print(ob.gcd(n,arr))

@@ -1,0 +1,13 @@
+class Solution
+{
+	public:
+    int gcd(int A, int B) 
+	{
+	    while(A!=0 && B!=0)
+	    {
+	        (A>B)?(A=A-B):B=B-A;
+	    }
+	    return max(A,B);
+	      
+	} 
+};

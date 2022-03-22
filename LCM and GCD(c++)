@@ -1,0 +1,17 @@
+ class Solution{
+ public:
+    vector<long long> lcmAndGcd(long long A , long long B) {
+        long long int g,l;
+        long long int p=A*B;
+        vector<long long int>lg;
+        while(A!=0 and B!=0)
+        {
+            (A>B)?A=A%B:B=B%A;
+        }
+        g=max(A,B);
+        l=p/g;
+         lg.push_back(l);
+         lg.push_back(g);
+        return lg;
+    }
+};

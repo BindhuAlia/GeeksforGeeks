@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution
 {
 	public:
@@ -11,3 +13,17 @@ class Solution
 	      
 	} 
 };
+
+int main() 
+{
+   	int t;
+    cin >> t;
+    while (t--)
+    {
+        int A, B;
+        cin >> A >> B;
+        Solution ob;
+       	cout <<  ob.gcd(A, B) << "\n";
+    }
+    return 0;
+} 

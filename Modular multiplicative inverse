@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class Solution{
+    public:
+    int modInverse(int a, int m)
+    {
+        int i=1;
+        while(i<=m)
+        {
+            if ((a*i)%m == 1)
+            {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+};
+
+int main()
+{
+	int T;
+	
+	//taking testcases
+	cin>>T;
+	while(T--){
+		int a,m;
+		
+		//taking input a and m
+		cin>>a>>m;
+		Solution ob;
+		cout << ob.modInverse(a, m)<<endl;
+	}
+    return 0;
+}  

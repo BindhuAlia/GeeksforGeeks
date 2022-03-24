@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    int primeSum(int N){
+        vector<bool>arr(N+1,true);
+        arr[0]=arr[1]=false;
+        
+        for(int p=2;p*p<=N;p++)
+        {
+            if(arr[p])
+            {
+               for(int i=p*p;i<=N;i+=p)
+               {
+                   arr[i]=false;
+               }
+            }
+        }
+        int ans=0;
+        while(N>0)
+        {
+            int r=N%10;
+            if (arr[r])ans+=r;
+            N/=10;
+        }
+        return ans;
+    }
+};
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        
+        Solution ob;
+        cout<<ob.primeSum(N)<<"\n";
+    }
+    return 0;
+} 

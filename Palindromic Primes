@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    int palPrimes(int n) {
+        vector<bool>ab(n+1,true);
+        ab[0]=false;
+        ab[1]=false;
+        for(int p=2;p*p<=n ;p++)
+        {
+            if (ab[p])
+            {
+                for(int j=p*p;j<=n ;j+=p)
+                {
+                    ab[j]=false;
+                }
+            }
+        }
+        int ans=0;
+        for(int i=2;i<=n;i++)
+        {
+            if (ab[i]==true && i<=7)ans++;
+            else if (ab[i]==true && i>=7)
+            {
+                int temp=i,sum=0;
+                while(temp>0)
+                {
+                    int r=temp%10;
+                    sum=(sum*10)+r;
+                    temp/=10;
+                }
+                if (sum==i)ans++;
+            }
+        }
+        return ans;
+    }
+};
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        
+        cin>>n;
+
+        Solution ob;
+        cout << ob.palPrimes(n) << endl;
+    }
+    return 0;
+}

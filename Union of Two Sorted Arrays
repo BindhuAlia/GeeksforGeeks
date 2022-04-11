@@ -1,0 +1,8 @@
+class Solution:
+    def mergeArrays(self,a,b,n,m):
+        a1=set(a)
+        b1=set(b)
+        ans=a1|b1
+        ans=list(ans)
+        ans.sort()
+        return ans

@@ -1,0 +1,24 @@
+class Solution
+{
+public:
+    void abc(int ind,int sum,int N,vector<int>&arr,vector<int>&ans)
+    {
+        if(ind==N)
+        {
+            ans.push_back(sum);
+            return;
+        }
+        sum+=arr[ind];
+        abc(ind+1,sum,N,arr,ans);
+        sum-=arr[ind];
+        abc(ind+1,sum,N,arr,ans);
+        
+    }
+    vector<int> subsetSums(vector<int> arr, int N)
+    {
+        vector<int>ans;
+        abc(0,0,N,arr,ans);
+        return ans;
+        
+    }
+};

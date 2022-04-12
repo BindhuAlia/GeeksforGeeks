@@ -1,0 +1,15 @@
+class Solution{
+    public:
+    void countOddEven(int arr[], int sizeof_array)
+    {
+        int e=0,o=0;
+        for(int i=0;i<sizeof_array;i++)
+        {
+            if(arr[i]%2==0)e+=1;
+            else o+=1;
+        }
+        cout<<o<<" "<<e<<endl;
+       
+        
+    }
+};

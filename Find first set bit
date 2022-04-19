@@ -1,0 +1,17 @@
+class Solution
+{
+    public:
+    //Function to find position of first set bit in the given number.
+    unsigned int getFirstSetBit(int n)
+    {
+        if(n==0)return 0;
+        int s=1;
+        while(n)
+        {
+            if(n&1>0)return s;
+            s+=1;
+            n=n>>1;
+        }
+        return s;
+    }
+};

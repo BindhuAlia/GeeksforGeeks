@@ -1,0 +1,7 @@
+class Solution:
+    def NumberofElementsInIntersection(self,a, b, n, m):
+        #return: expected length of the intersection array.
+        a1=set(a)
+        b1=set(b)
+        l=a1.intersection(b1)
+        return(len(l))

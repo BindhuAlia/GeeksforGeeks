@@ -1,0 +1,12 @@
+class Solution {
+  public:
+    int setBits(int N) {
+        int s=0;
+        while(N)
+        {
+            if(N & 1 >0)s++;
+            N=N>>1;
+        }
+        return s;
+    }
+};

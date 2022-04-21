@@ -1,0 +1,9 @@
+class Solution{   
+public:
+    string oddEven(int n){
+        while(n)
+        {
+            if(n&1>0)return "odd";
+            else return "even";
+        }
+   

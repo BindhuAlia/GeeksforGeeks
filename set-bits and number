@@ -1,0 +1,13 @@
+class Solution{
+    public:
+    int bitMultiply(int N){
+        int count=0;
+        int temp=N;
+        while(N)
+        {
+            if(N&1>0)count++;
+            N=N>>1;
+        }
+        return (temp*count);
+    }
+};

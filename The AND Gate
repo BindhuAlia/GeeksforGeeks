@@ -1,0 +1,11 @@
+class Solution{
+public:
+    int andGate(vector<int> arr,int N){
+        int ans=arr[0];
+        for(int i=1;i<N;i++)
+        {
+            ans=(ans&arr[i]);
+        }
+        return ans;
+    }
+};

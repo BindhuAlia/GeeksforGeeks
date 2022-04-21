@@ -1,0 +1,16 @@
+class Solution{
+    public:
+    long long findMissing(long long a[], long long b[], int n)
+    {
+        long long int a1=0,a2=0;
+        for(long long int i=0;i<n;i++)
+        {
+            a1^=a[i];
+        }
+        for(long long int i=0;i<n-1;i++)
+        {
+            a2^=b[i];
+        }
+        return a1^a2;
+    }
+};

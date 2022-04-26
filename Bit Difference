@@ -1,0 +1,17 @@
+#define m 32
+class Solution{
+    public:
+    // Function to find number of bits needed to be flipped to convert A to B
+    int countBitsFlip(int a, int b){
+        
+        int count=0;
+        bitset<m>a1(a);
+        bitset<m>b1(b);
+        for(int i=0;i<m;i++)
+        {
+            if(a1[i]!=b1[i])count++;
+        }
+        return count;
+        
+    }
+};

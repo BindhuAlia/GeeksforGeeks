@@ -1,0 +1,60 @@
+/*
+The structure of the class is as follows
+class _stack{
+stack<int> s;
+int minEle;
+public :
+    int getMin();
+    int pop();
+    void push(int);
+};
+*/
+
+class Solution{
+    int minEle;
+    stack<int> s;
+    public:
+    
+       /*returns min element from stack*/
+       int getMin(){
+           
+           if (s.size()==0)return -1;
+           else return minEle;
+       }
+       
+       /*returns poped element from stack*/
+       int pop(){
+           int ans=0;
+           if (s.size()==0)return -1;
+           if(minEle>s.top())
+           {
+               ans=minEle;
+               minEle=2*minEle -s.top();
+               s.pop();
+               return ans;
+           }
+           ans=s.top();
+          s.pop();
+         return ans;
+           
+       }
+       
+       /*push element x into the stack*/
+       void push(int x){
+           
+           if(s.size()==0)
+           {
+               s.push(x);
+               minEle=x;
+           }
+           else
+           {
+               if(minEle>x)
+               {
+                   s.push(x*2-minEle);
+                   minEle=x;
+               }
+               else s.push(x);
+           }
+       }
+};

@@ -1,0 +1,24 @@
+void preod(Node *root,vector<int>&v)
+        {
+            if(root==NULL)return;
+            v.emplace_back(root->data);
+            preod(root->left,v);
+            preod(root->right,v);
+        }
+class Solution
+{
+public:
+    int findMax(Node *root)
+    {
+        vector<int>v;
+        preod(root,v);
+        sort(v.begin(),v.end());
+        return v[v.size()-1];
+    }
+    int findMin(Node *root)
+    {
+        vector<int>v;
+        preod(root,v);
+        sort(v.begin(),v.end());
+        return v[0];
+    }

@@ -1,0 +1,24 @@
+class Solution
+{
+    public:
+    void preod(Node *root,vector<int>&v)
+        {
+            if(root==NULL)return;
+            v.emplace_back(root->data);
+            preod(root->left,v);
+            preod(root->right,v);
+        }
+
+    vector <int> findCommon(Node *root1, Node *root2)
+    {
+       vector<int>v1;
+       vector<int>v2;
+       vector<int>v3;
+       preod(root1,v1);
+       preod(root2,v2);
+       sort(v1.begin(),v1.end());
+       sort(v2.begin(),v2.end());
+       set_intersection(v1.begin(),v1.end(),v2.begin(),v2.end(),back_inserter(v3));
+       return v3;
+    }
+};

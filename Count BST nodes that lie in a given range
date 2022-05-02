@@ -1,0 +1,18 @@
+void preod(Node *root,vector<int>&v)
+{
+    if(root==NULL)return;
+    v.emplace_back(root->data);
+    preod(root->left,v);
+    preod(root->right,v);
+}
+int getCount(Node *root, int l, int h)
+{
+  vector<int>v;
+  preod(root,v);
+  int count=0;
+  for(int i=0;i<v.size();i++)
+  {
+      if(v[i]>=l and v[i]<=h)count+=1;
+  }
+  return count;
+}

@@ -1,0 +1,13 @@
+void postod(Node *root,vector<int>&v)
+{
+    if(root==NULL)return;
+    postod(root->left,v);
+    postod(root->right,v);
+    v.emplace_back(root->data);
+}
+vector <int> postOrder(Node* root)
+{
+  vector<int>v;
+  postod(root,v);
+  return v;
+}

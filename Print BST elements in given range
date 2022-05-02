@@ -1,0 +1,23 @@
+void preod(Node *root,vector<int>&v)
+{
+    if(root==NULL)return;
+    v.emplace_back(root->data);
+    preod(root->left,v);
+    preod(root->right,v);
+}
+
+
+class Solution {
+  public:
+    vector<int> printNearNodes(Node *root, int low, int high) {
+        vector<int>v;
+        vector<int>ans;
+        preod(root,v); 
+        for(int i=0;i<v.size();i++)
+        {
+            if(v[i]>=low and v[i]<=high)ans.push_back(v[i]);
+        }
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
+};

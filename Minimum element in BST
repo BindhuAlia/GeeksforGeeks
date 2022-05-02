@@ -1,0 +1,16 @@
+void preod(Node *root,vector<int>&v)
+{
+    if(root==NULL)return;
+    v.emplace_back(root->data);
+    preod(root->left,v);
+    preod(root->right,v);
+    
+}
+int minValue(Node* root) {
+    vector<int>v;
+    preod(root,v);
+    sort(v.begin(),v.end());
+    if(v.size()==0)return -1;
+    else
+    return v[0];
+}

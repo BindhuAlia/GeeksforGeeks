@@ -1,0 +1,23 @@
+void preod(Node *root,vector<int>&v)
+{
+    if(root==NULL)return;
+    v.emplace_back(root->data);
+    preod(root->left,v);
+    preod(root->right,v);
+    
+}
+
+class Solution
+{
+    public:
+    int kthLargest(Node *root, int K)
+    {
+        vector<int>v;
+        preod(root,v);
+        sort(v.begin(),v.end());
+        set<int>s(v.begin(),v.end());
+        v.assign(s.begin(),s.end());
+        reverse(v.begin(),v.end());
+        return v[K-1];
+    }
+};

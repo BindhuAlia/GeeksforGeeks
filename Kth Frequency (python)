@@ -1,0 +1,14 @@
+t=int(input())
+for _ in range(t):
+    n,k=map(int,input().split())
+    l=list(map(int,input().split()))
+    s=set(l)
+    f=0
+    for i in s:
+        if l.count(i)>k:
+            print(i,end=" ")
+            f=1
+    if f==0:
+
+        print(-1,end="")
+    print()

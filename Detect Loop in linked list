@@ -1,0 +1,20 @@
+class Solution
+{
+    public:
+    
+    bool detectLoop(Node* head)
+    {
+        unordered_map<Node* , int>m;
+        if(!head)return false;
+        while(head)
+        {
+            if(!m[head])
+            {
+                m[head]=1;
+                head=head->next;
+            }
+            else return true;
+        }
+        return false;
+    }
+};

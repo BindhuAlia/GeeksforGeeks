@@ -1,0 +1,13 @@
+int getNthFromLast(Node *head, int n)
+{
+    Node *temp=head;
+    vector<int>v;
+    while(temp!=NULL)
+    {
+        v.push_back(temp->data);
+        temp=temp->next;
+    }
+    int k=v.size();
+    if(k<n)return -1;
+    else return v[k-n];
+}
